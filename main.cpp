@@ -29,3 +29,11 @@ class B:public A{
     }
 
 }
+int main()
+{
+    A a(4);
+    B b(6);
+    a.show();//call A::show()
+    a.print();//call A::print()
+    b.print()//do not bind to A::print()
+}
