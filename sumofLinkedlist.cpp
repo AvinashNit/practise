@@ -41,27 +41,22 @@ void print(Node *root)
     }
     cout<<endl;
 }
-int sumOfNodes(Node *root,int k)//function to add last n nodes of linked list
+Node* ReversePair(Node *root)
 {
-    while(true)
-    {
-        int sum=0;
-        int n=k+1;
-        Node *temp=root;
-        while(n)
-        {
-                if(temp==NULL)//if iterating nodes comes to an end
-                return sum;
-            sum=sum+temp->data;
-            temp=temp->next;
-            n=n-1;
-        }
-        root=root->next;//next iteration after found that the iteration has not ended 
-    }
+    if(root==NULL)
+    return NULL;
+    if(root->next==NULL)
+    return NULL;
+    Node *temp=root->next->next;
+    root->next->next=root;
+    root=root->next;
+    root->next->next=ReversePair(temp);
+    return root;
+
 }
 int main()
 {
     Node *root=Insert();
     print(root);
-    cout<<sumOfNodes(root,2);
+    print(ReversePair(root));
 }
