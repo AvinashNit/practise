@@ -1,0 +1,12 @@
+    .container{
+        width: 300px;
+        height:100px;
+        color: blue;
+        margin: 30px;
+    }
+.container1{
+    background-color: aqua;
+    color: blue;    
+    border: 5px, solid,magenta;
+    border-radius: 4%;
+}
